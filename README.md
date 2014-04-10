@@ -18,8 +18,8 @@ b. 如果日志文件中出现其他的证书相关的错误，则可能是证�
 a. 移步至[ICTCLAS网站](http://ictclas.nlpir.org/)下载最新的库文件和数据文件；
 b. 将下载包当中的库文件（dll/so）更新至nlpir目录下；
 c. 将下载包当中的Data文件夹替换掉当前目录下的Data文件夹。
-* 当前项目下的库文件是ICTCLAS网站2014-1-6发布的库。
-* 当前项目在 Windows 8.1 64bit + [Anaconda](https://store.continuum.io/cshop/anaconda/) 1.9 (Python 2.7.6) + [PyCharm](http://www.jetbrains.com/pycharm/) 3.1.1下测试通过。
+* 当前项目下的库文件是ICTCLAS网站2014-3-24发布的库。
+* 当前项目在 Windows 8.1 64bit + [Anaconda](https://store.continuum.io/cshop/anaconda/) 1.9 (Python 2.7.6) + [PyCharm](http://www.jetbrains.com/pycharm/) 3.1.2下测试通过。
 
 ## Acknowledgments
 * This is just a warpper for the binary distribution of [ICTCLAS](http://ictclas.nlpir.org/).
