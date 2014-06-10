@@ -56,4 +56,7 @@ NLPIR（ICTCLAS）中文分词系统Python接口。
 ## If you want to:
 * Report bug or contribute to project: report an issue through GitHub.
 
+* If you like this program, please Start it on its GitHub Page.
+
 * Donate to the author: the author will be grateful if you dontae through his ZhiFuBao(AliPay) account, scan the QR code with you Alipay Cellphone APP.
+![](https://raw.githubusercontent.com/haobibo/ICTCLAS_Python_Warpper/master/AliPay-Peter_Howe.png)
