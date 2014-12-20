@@ -18,7 +18,7 @@ NLPIR（ICTCLAS）中文分词系统Python接口。
 
 
 * 建议通过Linux调用，如果在Windows下使用，建议使用Pycharm或其他IDE，以正常输出中文。 在Windows CMD下，如果基于Python 2.x，可能会输出乱码，解决方案参见：[这篇文章](http://apoo.bokee.com/7028948.html)。
- 当前项目在 Windows 8.1 64bit + [Anaconda](https://store.continuum.io/cshop/anaconda/) 2.0 (Python 2.7.6) + [PyCharm](http://www.jetbrains.com/pycharm/) 3.4下测试通过。
+ 当前项目在 Windows 10(TechPreview) 64bit + [Anaconda](https://store.continuum.io/cshop/anaconda/) 2.1 (Python 2.7.8) + [PyCharm](http://www.jetbrains.com/pycharm/) 4.0下测试通过。
 
 * 目前的代码针对Python2.7.x设计，如果您要用Python 3.x进行调用，代码文件当中说明了需要修改的配置，主要的区别是返回值需要从bytes进行类型转换后再使用，细节在代码文件当中有描述，或者您也可以参照“常见问题”中关于Python3.x调用的说明部分。
 
@@ -30,9 +30,9 @@ NLPIR（ICTCLAS）中文分词系统Python接口。
 
 * 出错原因：本Python程序只是一个接口程序，当出现上述问题时，绝大多数情况都是由于NLPIR（ICTCLAS）组件分词出错导致的。当您看到这样的错误时，请首先到程序的Data目录下，查看是否有文件名为“YYYYMMDD.err”（YYYYMMDD为日期）的错误输出文件，该文件由NLPIR（ICTCLAS）组件生成，具体指明了错误原因。错误原因一般包括：
 
-* 原因一》数据文件未正确配置的问题：如果日志文件中出现“Cannot Open Configure file”，则是因为您的Data文件未正确配置导致的。解决方案为：	请确认您再代码中调用Init函数的第一个参数（数据文件路径），与Data存放的目录相匹配，如果您传入的该参数为空字符串，则默认为当前python代码的路径。
+* 原因一» 数据文件未正确配置的问题：如果日志文件中出现“Cannot Open Configure file”，则是因为您的Data文件未正确配置导致的。解决方案为：	请确认您再代码中调用Init函数的第一个参数（数据文件路径），与Data存放的目录相匹配，如果您传入的该参数为空字符串，则默认为当前python代码的路径。
 
-* 原因二》关于证书与程序不匹配、过期、无效的问题：如果日志文件中出现“License not for system”错误，则是库文件与Data文件的证书文件不匹配；如果日志文件中出现“Not valid license or your license expired”错误，则是证书文件到期、损坏、或不存在等；关于证书问题的解决方案如下：
+* 原因二» 关于证书与程序不匹配、过期、无效的问题：如果日志文件中出现“License not for system”错误，则是库文件与Data文件的证书文件不匹配；如果日志文件中出现“Not valid license or your license expired”错误，则是证书文件到期、损坏、或不存在等；关于证书问题的解决方案如下：
 	* 移步至[ICTCLAS网站](http://ictclas.nlpir.org/)下载最新的库文件和数据文件；
 	* 将下载包当中的库文件（dll/so）更新至nlpir目录下，替换时注意您的操作系统、操作系统位数、Python程序位数(32/64bit)、程序库(dll/so)位数的匹配；
 	* 将下载包当中的Data文件夹替换掉当前目录下的Data文件夹。
@@ -40,7 +40,10 @@ NLPIR（ICTCLAS）中文分词系统Python接口。
 ### **【证书问题特别说明】** ###
 * 在2014年6月上旬，ICTCLAS证书出现使用问题，表现为：2014-3-24发布的版本、2014-4-28（百度网盘）共享的版本，运行时均出现证书过期的问题。该问题是由于ICTCLAS本身的问题导致的，最佳解决方案是与ICTCLAS原作者取得联系提示其更新证书。
 
-* 当前项目下的库文件是ICTCLAS网站2013-12-19发布的程序库及数据文件，经测试，到目前仍可正常使用，但分词模型可能较旧；您也可以自行更新到其他时间的发布包以满足您的需求。不同时间发布的程序库，在本项目代码中以“Patch_YYYYMMDD.zip”的形式命名，下载后将原来代码中的nlpir目录和Data目录替换，**但目前仅20131219发布的程序可用**。
+* 当前项目下的库文件是ICTCLAS网站2014-09-26发布的程序库及数据文件，经测试，到目前仍可正常使用。
+您可以自行更新到其他时间的发布包以满足您的需求。不同时间发布的程序库，在本项目代码中以“Patch_YYYYMMDD.zip”的形式命名，下载后将原来代码中的nlpir目录和Data目录替换，
+
+* 经测试，20131219发布的程序版本截止可用，改版本为2013年底推出的2014测试版，可以正常进行分词，但分词模型可能较旧。
 
 * 如果出现了其他关于证书的问题，在您尝试了更新ICTCLAS程序包后仍不能解决的，这样的证书问题不属于Python接口能解决的范畴，请联系ICTCLAS原作者解决证书问题。
 

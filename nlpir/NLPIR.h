@@ -81,6 +81,7 @@ struct result_t{
 #define UTF8_CODE GBK_CODE+1//UTF8编码
 #define BIG5_CODE GBK_CODE+2//BIG5编码
 #define GBK_FANTI_CODE GBK_CODE+3//GBK编码，里面包含繁体字
+#define UTF8_FANTI_CODE GBK_CODE+4//UTF8编码
 
 /*********************************************************************
  *
@@ -137,21 +138,21 @@ NLPIR_API bool NLPIR_Exit();
 NLPIR_API const char * NLPIR_ParagraphProcess(const char *sParagraph,int bPOStagged=1);
 /*********************************************************************
  *
- *  Func Name  : NLPIR_ReleaseBuf
+ *  Func Name  : NLPIR_GetLastErrorMsg
  *
- *  Description: free buffer
+ *  Description: GetLastErrorMessage
  *    
  *
- *  Parameters : sBuf: return buffer
+ *  Parameters : void
  *               
  *				  
  *  Returns    : the result buffer pointer 
  *
  *  Author     : Kevin Zhang  
  *  History    : 
- *              1.create 2013-11-6
+ *              1.create 2014-2-27
  *********************************************************************/
-//NLPIR_API void NLPIR_ReleaseBuf(const char *sBuf);
+NLPIR_API const char * NLPIR_GetLastErrorMsg();
 /*********************************************************************
  *
  *  Func Name  : ParagraphProcessingA
@@ -472,7 +473,8 @@ class  __declspec(dllexport) CNLPIR {
 private:
 		unsigned int m_nHandle;//该成员作为该类的Handle值，由系统自动分配，用户不可修改
 		bool m_bAvailable;//该成员作为多线程共享控制的参数，由系统自动分配，用户不可修改
-
+		int m_nThreadCount;//Thread Count
+		bool m_bWriting;//writing  protection
 };
 
 /*********************************************************************
