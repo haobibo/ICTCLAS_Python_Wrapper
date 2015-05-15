@@ -1,5 +1,5 @@
-#ICTCLAS Python Warpper
-Python warpper for ICTCLAS 2014 (or NLPIR 2014).
+#ICTCLAS Python Wrapper
+Python wrapper for ICTCLAS 2015 (or NLPIR 2015).
 
 NLPIR（ICTCLAS）中文分词系统Python接口。
 
@@ -14,11 +14,11 @@ NLPIR（ICTCLAS）中文分词系统Python接口。
 
 * 使用之前，请在nlpir.py文件当中，通过参数“libFile”设置正确的库文件，根据操作系统（Linux/Windows）和操作系统位数（32/64 bit），配置正确的库文件（dll/so）。
 
-* 库文件放在项目的nlpir目录下，dll是Windows所需动态链接库，so是Linux所需的动态库，文件名当中的32/64表示操作系统bit数。
+* 库文件放在项目的nlpir目录下，dll是Windows所需动态链接库，so是Linux所需的动态链接库，文件名当中的32/64表示操作系统bit数。
 
 
-* 建议通过Linux调用，如果在Windows下使用，建议使用Pycharm或其他IDE，以正常输出中文。 在Windows CMD下，如果基于Python 2.x，可能会输出乱码，解决方案参见：[这篇文章](http://apoo.bokee.com/7028948.html)。
- 当前项目在 Windows 10(TechPreview) 64bit + [Anaconda](https://store.continuum.io/cshop/anaconda/) 2.1 (Python 2.7.8) + [PyCharm](http://www.jetbrains.com/pycharm/) 4.0下测试通过。
+* 调试时建议通过Linux调用，如果在Windows下使用，建议使用Pycharm或其他IDE，以正常输出中文。 在Windows CMD下，如果基于Python 2.x，可能会输出乱码，解决方案参见：[这篇文章](http://apoo.bokee.com/7028948.html)。
+ 当前项目在 Windows 10(TechPreview) 64bit + [Anaconda](https://store.continuum.io/cshop/anaconda/) 2.2 (Python 2.7.9) + [PyCharm](http://www.jetbrains.com/pycharm/) 4.0下测试通过。
 
 * 目前的代码针对Python2.7.x设计，如果您要用Python 3.x进行调用，代码文件当中说明了需要修改的配置，主要的区别是返回值需要从bytes进行类型转换后再使用，细节在代码文件当中有描述，或者您也可以参照“常见问题”中关于Python3.x调用的说明部分。
 
@@ -38,9 +38,9 @@ NLPIR（ICTCLAS）中文分词系统Python接口。
 	* 将下载包当中的Data文件夹替换掉当前目录下的Data文件夹。
 
 ### **【证书问题特别说明】** ###
-* 在2014年6月上旬，ICTCLAS证书出现使用问题，表现为：2014-3-24发布的版本、2014-4-28（百度网盘）共享的版本，运行时均出现证书过期的问题。该问题是由于ICTCLAS本身的问题导致的，最佳解决方案是与ICTCLAS原作者取得联系提示其更新证书。
+* 从ictclas.nlpir.org下载的ICTCLAS发布包中的sample/pythonsample目录中包含的dll和so文件为旧版本，请使用本项目中的动态链接库文件或自行进行替换。
 
-* 当前项目下的库文件是ICTCLAS网站2014-09-26发布的程序库及数据文件，经测试，到目前仍可正常使用。
+* 当前项目下的库文件是ICTCLAS网站2014-12-30发布的2015版程序库及数据文件，经测试，到目前仍可正常使用。
 您可以自行更新到其他时间的发布包以满足您的需求。不同时间发布的程序库，在本项目代码中以“Patch_YYYYMMDD.zip”的形式命名，下载后将原来代码中的nlpir目录和Data目录替换，
 
 * 经测试，20131219发布的程序版本截止可用，改版本为2013年底推出的2014测试版，可以正常进行分词，但分词模型可能较旧。
@@ -51,16 +51,15 @@ NLPIR（ICTCLAS）中文分词系统Python接口。
 代码文件当中说明了需要修改的配置，主要的区别是返回值需要从bytes进行类型转换后再使用，请从代码中搜索以“###”开始的行，这些用“###”注释掉的行是针对Python3.x的，而这些代码前一行或者后一行的代码是Python2.7.x调用需要的代码，如果您确认您要用Python3.x调用，修改这三四行代码就可以解决问题。
 
 ## Acknowledgments
-* This is just a warpper for the binary distribution of [ICTCLAS](http://ictclas.nlpir.org/).
+* This is just a wrapper for the binary distribution of [ICTCLAS](http://ictclas.nlpir.org/).
 * This project is released as an open source software by Hao Bibo.
 * To know more about the author or contacts: see his [CV](http://en.wikipedia.org/wiki/User:Haobibo) or browse his [Sina Weibo](http://weibo.com/peteraeon).
-    > **OFFER DESIRE**: the author is now eager for a PhD or job offer from top univeristies or research institutions, top IT companies as well. If you have interests after you read my CV, please feel free to contact me.
 
 ## If you want to:
 * Report bug or contribute to project: report an issue through GitHub.
 
 * If you like this program, please Start it on its GitHub Page.
 
-* Donate to the author: the author will be grateful if you dontae through his ZhiFuBao(AliPay) account, scan the QR code with you Alipay Cellphone APP.
+* Donate to the author: the author will be grateful if you dontae through his ZhiFuBao(AliPay) or WeChat account, scan the QR code with your APP on phone.
 
-![](https://raw.githubusercontent.com/haobibo/ICTCLAS_Python_Warpper/master/AliPay-Peter_Howe.png)
+![](https://raw.githubusercontent.com/haobibo/ICTCLAS_Python_Warpper/master/donate-Peter_Howe.png)
